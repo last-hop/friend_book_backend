@@ -2,7 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
-const userRoutes = require("../routes/userRoutes");
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 
@@ -23,11 +23,11 @@ app.use(cors());
 app.use("/api/users", userRoutes);
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-app.get("/", (req, res) => {
-  res.send("API is running...");
-});
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// app.get("/", (req, res) => {
+//   res.send("API is running...");
+// });
 
 // Export app for Vercel
 module.exports = app;
